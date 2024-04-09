@@ -1,0 +1,10 @@
+.keypad {
+  &__small-keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  &__big-keys {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+  }
+}
