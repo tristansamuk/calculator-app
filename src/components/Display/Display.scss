@@ -1,4 +1,11 @@
 .display {
   height: 5rem;
   background-color: lightgrey;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  &__result {
+    margin: 0, 1rem;
+  }
 }
