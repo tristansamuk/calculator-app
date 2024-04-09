@@ -1,4 +1,5 @@
 // import { useState } from "react";
+import "./styles/global.scss";
 import Display from "./components/Display/Display";
 import Key from "./components/Key/Key";
 import ThemeSwitch from "./components/ThemeSwitch/ThemeSwitch";
@@ -6,6 +7,25 @@ import ThemeSwitch from "./components/ThemeSwitch/ThemeSwitch";
 import "./App.scss";
 
 function App() {
+  const smallKeys = [
+    "7",
+    "8",
+    "9",
+    "DEL",
+    "4",
+    "5",
+    "6",
+    "+",
+    "1",
+    "2",
+    "3",
+    "-",
+    ".",
+    "0",
+    "/",
+    "x",
+  ];
+  const bigKeys = ["RESET", "="];
   return (
     <div className="home">
       <div className="calculator">
@@ -15,29 +35,16 @@ function App() {
         </div>
         <Display />
         <div className="calculator__keypad">
-          {/* Row 1 */}
-          <Key />
-          <Key />
-          <Key />
-          <Key />
-          {/* Row 2 */}
-          <Key />
-          <Key />
-          <Key />
-          <Key />
-          {/* Row 3 */}
-          <Key />
-          <Key />
-          <Key />
-          <Key />
-          {/* Row 4 */}
-          <Key />
-          <Key />
-          <Key />
-          <Key />
-          {/* Row 5 */}
-          <Key />
-          <Key />
+          <div className="calculator__small-keys">
+            {smallKeys.map((key) => {
+              return <Key label={key} />;
+            })}
+          </div>
+          <div className="calculator__big-keys">
+            {bigKeys.map((key) => {
+              return <Key label={key} />;
+            })}
+          </div>
         </div>
       </div>
     </div>
