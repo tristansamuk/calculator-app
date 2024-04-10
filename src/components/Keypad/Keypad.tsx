@@ -4,6 +4,7 @@ import Key from "../Key/Key";
 type Props = {
   display: string;
   setDisplay: React.Dispatch<React.SetStateAction<string>>;
+  calculate: (expression: string) => string;
 };
 
 // Key values
@@ -27,7 +28,7 @@ const smallKeyValues = [
 ];
 const bigKeyValues = ["RESET", "="];
 
-const Keypad = ({ setDisplay, display }: Props) => {
+const Keypad = ({ setDisplay, display, calculate }: Props) => {
   return (
     <div className="keypad">
       <div className="keypad__small-keys">
@@ -38,6 +39,7 @@ const Keypad = ({ setDisplay, display }: Props) => {
               display={display}
               setDisplay={setDisplay}
               keyValue={keyValue}
+              calculate={calculate}
             />
           );
         })}
@@ -50,6 +52,7 @@ const Keypad = ({ setDisplay, display }: Props) => {
               display={display}
               setDisplay={setDisplay}
               keyValue={keyValue}
+              calculate={calculate}
             />
           );
         })}

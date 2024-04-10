@@ -27,7 +27,11 @@ function App() {
           <ThemeSwitch />
         </div>
         <Display display={display} />
-        <Keypad display={display} setDisplay={setDisplay} />
+        <Keypad
+          display={display}
+          setDisplay={setDisplay}
+          calculate={calculate}
+        />
       </div>
     </div>
   );
