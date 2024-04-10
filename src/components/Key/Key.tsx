@@ -11,7 +11,12 @@ const hasDecimal = /\.+/;
 const Key = ({ keyValue, display, setDisplay }: Props) => {
   const onClick = () => {
     if (typeof keyValue === "number") {
-      setDisplay((display += keyValue.toString()));
+      if (keyValue === 0 && !display) {
+        return;
+      } else {
+        setDisplay((display += keyValue.toString()));
+        return;
+      }
     } else {
       switch (keyValue) {
         case "DEL":

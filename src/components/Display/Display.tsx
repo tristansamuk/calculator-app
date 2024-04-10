@@ -7,7 +7,7 @@ type Props = {
 const Display = ({ display }: Props) => {
   return (
     <div className="display">
-      <p className="display__number">{display ? display : "0"}</p>
+      <h2 className="display__number">{display ? display : "0"}</h2>
     </div>
   );
 };
