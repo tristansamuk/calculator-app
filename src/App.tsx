@@ -5,6 +5,13 @@ import Keypad from "./components/Keypad/Keypad";
 import ThemeSwitch from "./components/ThemeSwitch/ThemeSwitch";
 
 import "./App.scss";
+import { evaluate } from "mathjs";
+
+const calculate = (expression: string) => {
+  const result = evaluate(expression).toString();
+  return result;
+};
+console.log(calculate("38970 * 439857 / 3"));
 
 function App() {
   // State for display component
