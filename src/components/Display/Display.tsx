@@ -1,13 +1,13 @@
 import "./Display.scss";
 
 type Props = {
-  result: string;
+  display: string;
 };
 
-const Display = ({ result }: Props) => {
+const Display = ({ display }: Props) => {
   return (
     <div className="display">
-      <div className="display__result">{result ? result : "0"}</div>
+      <p className="display__number">{display ? display : "0"}</p>
     </div>
   );
 };

@@ -2,8 +2,8 @@ import "./Keypad.scss";
 import Key from "../Key/Key";
 
 type Props = {
-  result: string;
-  setResult: React.Dispatch<React.SetStateAction<string>>;
+  display: string;
+  setDisplay: React.Dispatch<React.SetStateAction<string>>;
 };
 
 // Key values
@@ -27,7 +27,7 @@ const smallKeyValues = [
 ];
 const bigKeyValues = ["RESET", "="];
 
-const Keypad = ({ setResult, result }: Props) => {
+const Keypad = ({ setDisplay, display }: Props) => {
   return (
     <div className="keypad">
       <div className="keypad__small-keys">
@@ -35,8 +35,8 @@ const Keypad = ({ setResult, result }: Props) => {
           return (
             <Key
               key={keyValue}
-              result={result}
-              setResult={setResult}
+              display={display}
+              setDisplay={setDisplay}
               keyValue={keyValue}
             />
           );
@@ -47,8 +47,8 @@ const Keypad = ({ setResult, result }: Props) => {
           return (
             <Key
               key={keyValue}
-              result={result}
-              setResult={setResult}
+              display={display}
+              setDisplay={setDisplay}
               keyValue={keyValue}
             />
           );

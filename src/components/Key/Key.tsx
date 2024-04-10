@@ -2,21 +2,48 @@ import "./Key.scss";
 
 type Props = {
   keyValue: number | string;
-  result: string;
-  setResult: React.Dispatch<React.SetStateAction<string>>;
+  display: string;
+  setDisplay: React.Dispatch<React.SetStateAction<string>>;
 };
 
-const Key = ({ keyValue, result, setResult }: Props) => {
+const hasDecimal = /\.+/;
+
+const Key = ({ keyValue, display, setDisplay }: Props) => {
   const onClick = () => {
     if (typeof keyValue === "number") {
-      setResult((result += keyValue.toString()));
-    } else if (keyValue === "RESET") {
-      setResult("");
-    } else if (keyValue === "DEL") {
-      setResult(result.slice(0, -1));
+      setDisplay((display += keyValue.toString()));
+    } else {
+      switch (keyValue) {
+        case "DEL":
+          setDisplay(display.slice(0, -1));
+          break;
+        case "RESET":
+          setDisplay("");
+          break;
+        case ".":
+          if (!display) {
+            break;
+          } else if (hasDecimal.test(display)) {
+            break;
+          } else {
+            setDisplay((display += keyValue.toString()));
+            break;
+          }
+      }
+
+      // case "+":
+      // case "-":
+      // case "-":
+      // case "/":
+      //   // setExpression(`${display} ${KeyValue.toString()} `)
+      //   // setDisplay("")
+      //   break;
+      // case "x":
+      //   // setExpression(`${display} * `)
+      //   // setDisplay("")
+      //   break;
     }
   };
-
   return (
     <button onClick={onClick} className="key">
       {keyValue}
