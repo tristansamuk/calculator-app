@@ -15,6 +15,9 @@ const hasDecimal = /\.+/;
 
 let expression = "";
 
+// Need a variable to keep track of whether last key pressed was an operation.
+// Use with number keys
+
 const Key = ({ keyValue, display, setDisplay, calculate }: Props) => {
   const onClick = () => {
     if (typeof keyValue === "number") {
@@ -35,6 +38,7 @@ const Key = ({ keyValue, display, setDisplay, calculate }: Props) => {
           break;
         case ".":
           if (!display) {
+            setDisplay("0" + keyValue.toString());
             break;
           } else if (hasDecimal.test(display)) {
             break;
