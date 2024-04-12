@@ -11,20 +11,27 @@ type Props = {
 
 const hasDecimal = /\.+/;
 
-// Keeps track of expression to be passed to calculate()
+// Keeps track of the expression to be passed to calculate()
 
 let expression = "";
 
-// Need a variable to keep track of whether last key pressed was an operation.
-// Use with number keys
+// Keep track of whether last key pressed was an operator
+
+let justClickedOperator = false;
 
 const Key = ({ keyValue, display, setDisplay, calculate }: Props) => {
   const onClick = () => {
     if (typeof keyValue === "number") {
       if (keyValue === 0 && !display) {
         return;
+      } else if (justClickedOperator === true) {
+        setDisplay(keyValue.toString());
+        justClickedOperator = false;
+        // console.log("this ran"); // this is
+        return;
       } else {
         setDisplay((display += keyValue.toString()));
+        justClickedOperator = false;
         return;
       }
     } else {
@@ -49,20 +56,25 @@ const Key = ({ keyValue, display, setDisplay, calculate }: Props) => {
         case "+":
         case "-":
         case "/":
-          if (!display) {
+          if (display === "") {
+            break;
+          } else if (justClickedOperator === false) {
+            justClickedOperator = true;
+            setDisplay(calculate(expression));
+            console.log("this block ran");
             break;
           } else {
+            justClickedOperator = true;
+            setDisplay(calculate(expression));
             expression = `${expression} ${display} ${keyValue}`;
-            console.log(expression);
-            setDisplay("");
+            break;
           }
-          break;
         case "x":
           expression = `${expression} ${display} *`;
-          console.log(expression);
+          // console.log(expression);
           setDisplay("");
           break;
-        case "=":
+        case "=": // This got messed up somehow
           expression = `${expression} ${display}`;
           console.log(expression);
           setDisplay(calculate(expression));
