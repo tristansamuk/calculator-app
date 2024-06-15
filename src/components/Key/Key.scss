@@ -6,7 +6,8 @@ button {
 }
 
 .key {
-  height: 3.5rem;
+  height: 3.7rem;
+  width: 3.7rem;
 
   @include number-key-text;
   display: flex;

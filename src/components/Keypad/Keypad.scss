@@ -3,12 +3,12 @@
 .keypad {
   background-color: var(--keypad-background);
   border-radius: $border-radius-1;
-  padding: 1.5rem;
+  padding: 1.75rem 1.5rem;
   &__grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    grid-gap: 1rem;
+    grid-gap: 0.9rem;
     :nth-child(4),
     :nth-child(17) {
       font-size: $del-reset;
@@ -17,6 +17,7 @@
       box-shadow: $del-reset-key-shadow;
     }
     :nth-child(n + 17) {
+      width: 100%;
       display: grid;
       grid-column: span 2;
     }
