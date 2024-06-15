@@ -1,12 +1,13 @@
 import "./Display.scss";
 
-type Props = {
+interface Props {
   display: string;
-};
+  theme: string;
+}
 
-const Display = ({ display }: Props) => {
+const Display = ({ display, theme }: Props) => {
   return (
-    <div className="display">
+    <div data-theme={theme} className="display">
       <h2 className="display__number">{display ? display : "0"}</h2>
     </div>
   );

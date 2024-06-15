@@ -1,8 +1,18 @@
+@use "./styles/global.scss" as *;
+
 .home {
+  background-color: var(--background);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
   width: 100vw;
+  height: 100vh;
 }
 
 .calculator {
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
   width: 20rem;
   margin-left: auto;
   margin-right: auto;
@@ -12,6 +22,7 @@
     }
   }
   &__logo {
+    color: var(--title-text);
   }
   &__keypad {
   }

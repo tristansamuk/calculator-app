@@ -1,0 +1,9 @@
+@use "./variables.scss" as *;
+
+// Typography
+
+@mixin number-key-text {
+  color: var(--number-key-text);
+  // font-size: 1.25rem;
+  font-weight: $bold;
+}

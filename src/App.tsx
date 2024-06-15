@@ -1,7 +1,7 @@
 import "./App.scss";
-import "./styles/global.scss";
 import { useState } from "react";
 import { evaluate } from "mathjs";
+import useLocalStorage from "use-local-storage";
 import Display from "./components/Display/Display";
 import Keypad from "./components/Keypad/Keypad";
 import ThemeSwitch from "./components/ThemeSwitch/ThemeSwitch";
@@ -12,22 +12,26 @@ const calculate = (expression: string): string => {
   const result = evaluate(expression).toString();
   return result;
 };
-// console.log(calculate("38970 * 439857 / 3"));
 
 function App() {
+  // Store key "theme" with default value "theme-1" in local storage
+
+  const [theme, setTheme] = useLocalStorage("theme", "theme-1");
+
   // State for display component
 
   const [display, setDisplay] = useState("");
 
   return (
-    <div className="home">
+    <div data-theme={theme} className="home">
       <div className="calculator">
         <div className="calculator__container--top">
           <h1 className="calculator__logo">calc</h1>
           <ThemeSwitch />
         </div>
-        <Display display={display} />
+        <Display theme={theme} display={display} />
         <Keypad
+          theme={theme}
           display={display}
           setDisplay={setDisplay}
           calculate={calculate}

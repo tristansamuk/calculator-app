@@ -1,11 +1,16 @@
+@use "../../styles/variables.scss" as *;
+
 .display {
+  margin: 2rem 0 1.5rem 0;
   height: 5rem;
-  background-color: lightgrey;
+  background-color: var(--display-background);
+  border-radius: $border-radius-1;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-  &__result {
-    margin: 0, 1rem;
+  padding: 1.5rem;
+  &__number {
+    color: var(--display-number);
   }
 }

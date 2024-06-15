@@ -1,0 +1,15 @@
+@use "../../styles/variables.scss" as *;
+@use "../../styles/mixins.scss" as *;
+
+.key {
+  @include number-key-text;
+  width: 3.5rem;
+  height: 3.5rem;
+  display: flex;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  border-radius: $border-radius-2;
+  background-color: var(--number-key-background);
+  box-shadow: $number-key-shadow;
+}

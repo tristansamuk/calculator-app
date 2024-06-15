@@ -1,6 +1,7 @@
 import "./Key.scss";
 
 type Props = {
+  theme: string;
   keyValue: number | string;
   display: string;
   setDisplay: React.Dispatch<React.SetStateAction<string>>;
@@ -20,7 +21,7 @@ let expression = "";
 let justClickedOperator = false;
 let justClickedEquals = false;
 
-const Key = ({ keyValue, display, setDisplay, calculate }: Props) => {
+const Key = ({ theme, keyValue, display, setDisplay, calculate }: Props) => {
   const onClick = () => {
     if (typeof keyValue === "number") {
       if (keyValue === 0 && !display) {
@@ -109,7 +110,7 @@ const Key = ({ keyValue, display, setDisplay, calculate }: Props) => {
     }
   };
   return (
-    <button onClick={onClick} className="key">
+    <button data-theme={theme} onClick={onClick} className="key">
       {keyValue}
     </button>
   );

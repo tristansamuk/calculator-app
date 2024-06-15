@@ -1,10 +1,16 @@
+@use "../../styles/variables.scss" as *;
+
 .keypad {
+  background-color: var(--keypad-background);
+  border-radius: $border-radius-1;
+  padding: 1.5rem;
   &__small-keys {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
   }
   &__big-keys {
-    display: grid;
-    grid-template-columns: repeat(2, 2fr);
+    display: flex;
   }
 }
