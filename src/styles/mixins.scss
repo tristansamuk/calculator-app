@@ -4,6 +4,6 @@
 
 @mixin number-key-text {
   color: var(--number-key-text);
-  // font-size: 1.25rem;
+  font-size: $number-key;
   font-weight: $bold;
 }

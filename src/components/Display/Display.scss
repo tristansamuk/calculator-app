@@ -12,5 +12,6 @@
   padding: 1.5rem;
   &__number {
     color: var(--display-number);
+    font-size: $display;
   }
 }

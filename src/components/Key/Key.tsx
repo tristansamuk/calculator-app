@@ -111,7 +111,7 @@ const Key = ({ theme, keyValue, display, setDisplay, calculate }: Props) => {
   };
   return (
     <button data-theme={theme} onClick={onClick} className="key">
-      {keyValue}
+      <p className="key__label">{keyValue}</p>
     </button>
   );
 };

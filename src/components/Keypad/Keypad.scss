@@ -11,6 +11,7 @@
     grid-gap: 1rem;
     :nth-child(4),
     :nth-child(17) {
+      font-size: $del-reset;
       color: var(--del-reset-key-text);
       background-color: var(--del-reset-key-background);
       box-shadow: $del-reset-key-shadow;

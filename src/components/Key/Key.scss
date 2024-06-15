@@ -1,11 +1,17 @@
 @use "../../styles/variables.scss" as *;
 @use "../../styles/mixins.scss" as *;
 
+button {
+  padding: 0 0 0 0;
+}
+
 .key {
-  @include number-key-text;
   height: 3.5rem;
+
+  @include number-key-text;
   display: flex;
-  padding: 0;
+  flex-direction: column;
+  padding-top: 7px;
   justify-content: center;
   align-items: center;
   border-radius: $border-radius-2;
