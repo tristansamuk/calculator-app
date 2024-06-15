@@ -2,7 +2,7 @@ import "./Keypad.scss";
 import Key from "../Key/Key";
 
 interface Props {
-  theme: string;
+  // theme: string;
   display: string;
   setDisplay: React.Dispatch<React.SetStateAction<string>>;
   calculate: (expression: string) => string;
@@ -30,14 +30,13 @@ const keyValues = [
   "=",
 ];
 
-const Keypad = ({ theme, setDisplay, display, calculate }: Props) => {
+const Keypad = ({ setDisplay, display, calculate }: Props) => {
   return (
-    <div data-theme={theme} className="keypad">
+    <div className="keypad">
       <div className="keypad__grid">
         {keyValues.map((keyValue) => {
           return (
             <Key
-              theme={theme}
               key={keyValue}
               display={display}
               setDisplay={setDisplay}

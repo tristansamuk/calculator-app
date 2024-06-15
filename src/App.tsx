@@ -29,9 +29,8 @@ function App() {
           <h1 className="calculator__logo">calc</h1>
           <ThemeSwitch />
         </div>
-        <Display theme={theme} display={display} />
+        <Display display={display} />
         <Keypad
-          theme={theme}
           display={display}
           setDisplay={setDisplay}
           calculate={calculate}
