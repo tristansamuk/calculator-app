@@ -3,8 +3,12 @@
 $border-radius-1: 10px;
 $border-radius-2: 5px;
 
-// Font weight
+// Font Weights
 
 $bold: 700;
 
+// Box Shadows
+
 $number-key-shadow: 0px 4px var(--number-key-shadow);
+$del-reset-key-shadow: 0px 4px var(--del-reset-key-shadow);
+$equals-key-shadow: 0px 4px var(--equals-key-shadow);

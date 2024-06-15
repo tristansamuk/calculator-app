@@ -9,7 +9,7 @@ interface Props {
 }
 
 // Key values
-const smallKeyValues = [
+const keyValues = [
   7,
   8,
   9,
@@ -26,28 +26,15 @@ const smallKeyValues = [
   0,
   "/",
   "x",
+  "RESET",
+  "=",
 ];
-const bigKeyValues = ["RESET", "="];
 
 const Keypad = ({ theme, setDisplay, display, calculate }: Props) => {
   return (
     <div data-theme={theme} className="keypad">
-      <div className="keypad__small-keys">
-        {smallKeyValues.map((keyValue) => {
-          return (
-            <Key
-              theme={theme}
-              key={keyValue}
-              display={display}
-              setDisplay={setDisplay}
-              keyValue={keyValue}
-              calculate={calculate}
-            />
-          );
-        })}
-      </div>
-      <div className="keypad__big-keys">
-        {bigKeyValues.map((keyValue) => {
+      <div className="keypad__grid">
+        {keyValues.map((keyValue) => {
           return (
             <Key
               theme={theme}

@@ -4,13 +4,25 @@
   background-color: var(--keypad-background);
   border-radius: $border-radius-1;
   padding: 1.5rem;
-  &__small-keys {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 1rem;
-  }
-  &__big-keys {
-    display: flex;
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 1rem;
+    :nth-child(4),
+    :nth-child(17) {
+      color: var(--del-reset-key-text);
+      background-color: var(--del-reset-key-background);
+      box-shadow: $del-reset-key-shadow;
+    }
+    :nth-child(n + 17) {
+      display: grid;
+      grid-column: span 2;
+    }
+    :nth-child(18) {
+      color: var(--equals-key-text);
+      background-color: var(--equals-key-background);
+      box-shadow: $equals-key-shadow;
+    }
   }
 }
