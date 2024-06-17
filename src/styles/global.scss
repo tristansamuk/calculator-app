@@ -33,7 +33,41 @@ button {
   --equals-key-text: #fff6ed;
   --equals-key-shadow: #95271b;
 }
-// [data-theme="theme-2"] {
-// }
+
+[data-theme="theme-2"] {
+  --background: #e6e6e6;
+  --title-text: #201f1b;
+  --theme-switch-text: #201f1b;
+  --theme-switch: #c45503;
+  --display-background: #eeeeee;
+  --display-number: #201f1b;
+  --keypad-background: #d3cdcd;
+  --number-key-background: #e6e4e0;
+  --number-key-text: #201f1b;
+  --number-key-shadow: #a69c92;
+  --del-reset-key-background: #398087;
+  --del-reset-key-text: #ffffff;
+  --del-reset-key-shadow: #195f66;
+  --equals-key-background: #c85402;
+  --equals-key-text: #ffffff;
+  --equals-key-shadow: #853800;
+}
+
 // [data-theme="theme-3"] {
+//   --background: ;
+//   --title-text: ;
+//   --theme-switch-text: ;
+//   --theme-switch: ;
+//   --display-background: ;
+//   --display-number: ;
+//   --keypad-background: ;
+//   --number-key-background: ;
+//   --number-key-text: ;
+//   --number-key-shadow: ;
+//   --del-reset-key-background: ;
+//   --del-reset-key-text: ;
+//   --del-reset-key-shadow: ;
+//   --equals-key-background: ;
+//   --equals-key-text: ;
+//   --equals-key-shadow: ;
 // }
