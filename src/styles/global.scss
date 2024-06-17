@@ -53,21 +53,21 @@ button {
   --equals-key-shadow: #853800;
 }
 
-// [data-theme="theme-3"] {
-//   --background: ;
-//   --title-text: ;
-//   --theme-switch-text: ;
-//   --theme-switch: ;
-//   --display-background: ;
-//   --display-number: ;
-//   --keypad-background: ;
-//   --number-key-background: ;
-//   --number-key-text: ;
-//   --number-key-shadow: ;
-//   --del-reset-key-background: ;
-//   --del-reset-key-text: ;
-//   --del-reset-key-shadow: ;
-//   --equals-key-background: ;
-//   --equals-key-text: ;
-//   --equals-key-shadow: ;
-// }
+[data-theme="theme-3"] {
+  --background: #17062a;
+  --title-text: #f8e43b;
+  --theme-switch-text: #f8e43b;
+  --theme-switch: #00decf;
+  --display-background: #1e0836;
+  --display-number: #f8e43b;
+  --keypad-background: #1e0836;
+  --number-key-background: #321c4b;
+  --number-key-text: #f8e43b;
+  --number-key-shadow: #851d9c;
+  --del-reset-key-background: #56077c;
+  --del-reset-key-text: #ffffff;
+  --del-reset-key-shadow: #bf14f4;
+  --equals-key-background: #00decf;
+  --equals-key-text: #000000;
+  --equals-key-shadow: #6df7ef;
+}
