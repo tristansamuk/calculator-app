@@ -4,7 +4,7 @@ import { evaluate } from "mathjs";
 import useLocalStorage from "use-local-storage";
 import Display from "./components/Display/Display";
 import Keypad from "./components/Keypad/Keypad";
-import ThemeSwitch from "./components/ThemeSwitch/ThemeSwitch";
+import Toggle from "./components/Toggle/Toggle";
 
 // Calculates and converts answer to sting
 
@@ -27,7 +27,7 @@ function App() {
       <div className="calculator">
         <div className="calculator__container--top">
           <h1 className="calculator__logo">calc</h1>
-          <ThemeSwitch />
+          <Toggle />
         </div>
         <Display display={display} />
         <Keypad
