@@ -1,24 +1,12 @@
 import useLocalStorage from "use-local-storage";
 import "./Toggle.scss";
-import { useState } from "react";
-
-// Idea
-// make the switch a button with moving dot inside it
-// set state for count defaulting to 1
-// onClick, increment count
-// if count = 2, setTheme("theme-2"), translate x by however many pixels
-// if count = 3, setTheme("theme-3"), translate x by however many pixels
-// if count < 3, setTheme("theme-1"), reset count to 1, translate back to original position
+import { useEffect, useState } from "react";
 
 const Toggle = () => {
   const [theme, setTheme] = useLocalStorage("theme", "theme-1");
   const [count, setCount] = useState(1);
 
-  const handleClick = () => {
-    setCount(count + 1);
-    if (count >= 3) {
-      setCount(1);
-    }
+  useEffect(() => {
     switch (count) {
       case 2:
         setTheme("theme-2");
@@ -28,6 +16,13 @@ const Toggle = () => {
         break;
       default:
         setTheme("theme-1");
+    }
+  }, [count]);
+
+  const handleClick = () => {
+    setCount(count + 1);
+    if (count >= 3) {
+      setCount(1);
     }
   };
 
@@ -44,6 +39,7 @@ const Toggle = () => {
         </div>
         <div className="toggle__container--switch">
           <button
+            data-count={count}
             onClick={() => handleClick()}
             className="toggle__button"
           ></button>
