@@ -5,5 +5,12 @@
 @mixin number-key-text {
   color: var(--number-key-text);
   font-size: $number-key;
-  font-weight: $bold;
+  font-weight: $semi-bold;
+}
+
+@mixin toggle-text {
+  color: var(--theme-switch-text);
+  font-size: $toggle;
+  font-weight: $semi-bold;
+  letter-spacing: 1px;
 }
