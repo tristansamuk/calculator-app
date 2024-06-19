@@ -1,6 +1,23 @@
 @use "./variables.scss" as *;
 
+// Media Query
+
+@mixin desktop {
+  @media screen and (min-width: 1440px) {
+    @content;
+  }
+}
+
 // Typography
+
+@mixin display-text {
+  color: var(--display-number);
+  font-size: $display;
+  font-weight: $bold;
+  @include desktop {
+    font-size: $display-desktop;
+  }
+}
 
 @mixin number-key-text {
   color: var(--number-key-text);

@@ -1,3 +1,4 @@
+@use "../../styles/mixins.scss" as *;
 @use "../../styles/variables.scss" as *;
 
 .display {
@@ -10,8 +11,10 @@
   justify-content: flex-end;
   align-items: center;
   padding: 1.5rem;
+  @include desktop {
+    height: 7rem;
+  }
   &__number {
-    color: var(--display-number);
-    font-size: $display;
+    @include display-text;
   }
 }
