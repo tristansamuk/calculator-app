@@ -27,7 +27,7 @@ function App() {
       <div className="calculator">
         <div className="calculator__container--top">
           <h1 className="calculator__logo">calc</h1>
-          <Toggle />
+          <Toggle setTheme={setTheme} />
         </div>
         <Display display={display} />
         <Keypad

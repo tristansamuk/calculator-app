@@ -1,10 +1,23 @@
-import useLocalStorage from "use-local-storage";
 import "./Toggle.scss";
 import { useEffect, useState } from "react";
 
-const Toggle = () => {
-  const [theme, setTheme] = useLocalStorage("theme", "theme-1");
+interface Props {
+  setTheme: (theme: string) => void;
+}
+
+const Toggle = ({ setTheme }: Props) => {
   const [count, setCount] = useState(1);
+
+  // When user clicks the toggle button, update the count
+
+  const handleClick = () => {
+    setCount(count + 1);
+    if (count >= 3) {
+      setCount(1);
+    }
+  };
+
+  // When count changes, change the theme
 
   useEffect(() => {
     switch (count) {
@@ -18,13 +31,6 @@ const Toggle = () => {
         setTheme("theme-1");
     }
   }, [count]);
-
-  const handleClick = () => {
-    setCount(count + 1);
-    if (count >= 3) {
-      setCount(1);
-    }
-  };
 
   return (
     <div className="toggle">
@@ -40,8 +46,9 @@ const Toggle = () => {
         <div className="toggle__container--switch">
           <button
             data-count={count}
-            onClick={() => handleClick()}
+            onClick={handleClick}
             className="toggle__button"
+            aria-label="toggle theme"
           ></button>
         </div>
       </div>
