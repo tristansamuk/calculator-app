@@ -6,10 +6,11 @@ button {
 }
 
 .key {
-  height: 3.7rem;
-  width: 3.7rem;
-
   @include number-key-text;
+  height: 3.7rem;
+
+  width: 100%;
+  min-width: 3.7rem;
   display: flex;
   flex-direction: column;
   padding-top: 7px;
@@ -18,4 +19,8 @@ button {
   border-radius: $border-radius-2;
   background-color: var(--number-key-background);
   box-shadow: $number-key-shadow;
+  @include desktop {
+    width: 100%;
+    border-radius: $border-radius-4;
+  }
 }

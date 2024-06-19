@@ -16,7 +16,6 @@ button {
 }
 
 [data-theme="theme-1"] {
-  transition: 0.25s ease-in-out;
   --background: #3b4664;
   --title-text: #feffff;
   --theme-switch-text: #feffff;
@@ -36,7 +35,6 @@ button {
 }
 
 [data-theme="theme-2"] {
-  transition: 0.25s ease-in-out;
   --background: #e6e6e6;
   --title-text: #201f1b;
   --theme-switch-text: #201f1b;
@@ -56,7 +54,6 @@ button {
 }
 
 [data-theme="theme-3"] {
-  transition: 0.25s ease-in-out;
   --background: #17062a;
   --title-text: #f8e43b;
   --theme-switch-text: #f8e43b;

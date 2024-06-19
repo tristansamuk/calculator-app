@@ -3,7 +3,7 @@
 // Media Query
 
 @mixin desktop {
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: $desktop) {
     @content;
   }
 }
@@ -23,6 +23,10 @@
   color: var(--number-key-text);
   font-size: $number-key;
   font-weight: $semi-bold;
+  @include desktop {
+    font-size: $number-key-desktop;
+    font-weight: $bold;
+  }
 }
 
 @mixin toggle-text {
