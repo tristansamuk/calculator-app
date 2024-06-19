@@ -12,21 +12,20 @@
 }
 
 .calculator {
-  padding-top: 2rem;
   display: flex;
   flex-direction: column;
   width: 20.5rem;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 2rem auto;
   @include desktop {
     width: 34rem;
+    margin: 6rem auto;
   }
   &__container {
     &--top {
       width: 100%;
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-end;
     }
   }
   &__logo {

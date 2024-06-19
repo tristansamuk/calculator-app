@@ -40,6 +40,9 @@
     width: 0.9rem;
     border-radius: $border-radius-1;
     background-color: var(--theme-switch);
+    &:active {
+      background-color: var(--theme-switch-active);
+    }
   }
 }
 

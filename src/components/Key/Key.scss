@@ -8,7 +8,6 @@ button {
 .key {
   @include number-key-text;
   height: 3.7rem;
-
   width: 100%;
   min-width: 3.7rem;
   display: flex;
@@ -19,6 +18,9 @@ button {
   border-radius: $border-radius-2;
   background-color: var(--number-key-background);
   box-shadow: $number-key-shadow;
+  &:active {
+    background-color: var(--number-key-background-active);
+  }
   @include desktop {
     width: 100%;
     border-radius: $border-radius-4;

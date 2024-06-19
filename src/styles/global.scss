@@ -20,16 +20,20 @@ button {
   --title-text: #feffff;
   --theme-switch-text: #feffff;
   --theme-switch: #d03f30;
+  --theme-switch-active: #f96b5b;
   --display-background: #171f32;
   --display-number: #feffff;
   --keypad-background: #262c42;
   --number-key-background: #e8e4db;
+  --number-key-background-active: #ffffff;
   --number-key-text: #47506c;
   --number-key-shadow: #aea39d;
   --del-reset-key-background: #647299;
+  --del-reset-key-background-active: #a2b3e1;
   --del-reset-key-text: #fff6ed;
   --del-reset-key-shadow: #424e74;
   --equals-key-background: #d03f30;
+  --equals-key-background-active: #f96b5b;
   --equals-key-text: #fff6ed;
   --equals-key-shadow: #95271b;
 }
@@ -39,16 +43,20 @@ button {
   --title-text: #201f1b;
   --theme-switch-text: #201f1b;
   --theme-switch: #c45503;
+  --theme-switch-active: #ff8a37;
   --display-background: #eeeeee;
   --display-number: #201f1b;
   --keypad-background: #d3cdcd;
   --number-key-background: #e6e4e0;
+  --number-key-background-active: #ffffff;
   --number-key-text: #201f1b;
   --number-key-shadow: #a69c92;
   --del-reset-key-background: #398087;
+  --del-reset-key-background-active: #61b5bd;
   --del-reset-key-text: #ffffff;
   --del-reset-key-shadow: #195f66;
   --equals-key-background: #c85402;
+  --equals-key-background-active: #ff8a37;
   --equals-key-text: #ffffff;
   --equals-key-shadow: #853800;
 }
@@ -58,16 +66,20 @@ button {
   --title-text: #f8e43b;
   --theme-switch-text: #f8e43b;
   --theme-switch: #00decf;
+  --theme-switch-active: #93fff9;
   --display-background: #1e0836;
   --display-number: #f8e43b;
   --keypad-background: #1e0836;
   --number-key-background: #321c4b;
+  --number-key-background-active: #6b33ad;
   --number-key-text: #f8e43b;
   --number-key-shadow: #851d9c;
   --del-reset-key-background: #56077c;
+  --del-reset-key-background-active: #8632b0;
   --del-reset-key-text: #ffffff;
   --del-reset-key-shadow: #bf14f4;
   --equals-key-background: #00decf;
+  --equals-key-background-active: #93fff9;
   --equals-key-text: #000000;
   --equals-key-shadow: #6df7ef;
 }

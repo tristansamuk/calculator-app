@@ -22,6 +22,9 @@
       color: var(--del-reset-key-text);
       background-color: var(--del-reset-key-background);
       box-shadow: $del-reset-key-shadow;
+      &:active {
+        background-color: var(--del-reset-key-background-active);
+      }
       @include desktop {
         font-size: $del-reset-desktop;
       }
@@ -35,6 +38,9 @@
       color: var(--equals-key-text);
       background-color: var(--equals-key-background);
       box-shadow: $equals-key-shadow;
+      &:active {
+        background-color: var(--equals-key-background-active);
+      }
     }
   }
 }

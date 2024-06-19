@@ -22,7 +22,7 @@
 @mixin number-key-text {
   color: var(--number-key-text);
   font-size: $number-key;
-  font-weight: $semi-bold;
+  font-weight: $bold;
   @include desktop {
     font-size: $number-key-desktop;
     font-weight: $bold;
