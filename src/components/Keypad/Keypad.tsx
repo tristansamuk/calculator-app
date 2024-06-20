@@ -1,49 +1,13 @@
-import "./Keypad.scss";
+import { keyValues } from "../../utils/constants";
 import Key from "../Key/Key";
+import "./Keypad.scss";
 
-interface Props {
-  // theme: string;
-  display: string;
-  setDisplay: React.Dispatch<React.SetStateAction<string>>;
-  calculate: (expression: string) => string;
-}
-
-// Key values
-const keyValues = [
-  7,
-  8,
-  9,
-  "DEL",
-  4,
-  5,
-  6,
-  "+",
-  1,
-  2,
-  3,
-  "-",
-  ".",
-  0,
-  "/",
-  "x",
-  "RESET",
-  "=",
-];
-
-const Keypad = ({ setDisplay, display, calculate }: Props) => {
+const Keypad = () => {
   return (
     <div className="keypad">
       <div className="keypad__grid">
         {keyValues.map((keyValue) => {
-          return (
-            <Key
-              key={keyValue}
-              display={display}
-              setDisplay={setDisplay}
-              keyValue={keyValue}
-              calculate={calculate}
-            />
-          );
+          return <Key key={keyValue} keyValue={keyValue} />;
         })}
       </div>
     </div>

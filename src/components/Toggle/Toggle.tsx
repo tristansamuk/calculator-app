@@ -1,5 +1,6 @@
-import "./Toggle.scss";
+import strings from "../../strings/strings";
 import { useEffect, useState } from "react";
+import "./Toggle.scss";
 
 interface Props {
   setTheme: (theme: string) => void;
@@ -10,7 +11,7 @@ const Toggle = ({ setTheme }: Props) => {
 
   // When user clicks the toggle button, update the count
 
-  const handleClick = () => {
+  const handleClickToggle = () => {
     setCount(count + 1);
     if (count >= 3) {
       setCount(1);
@@ -35,18 +36,22 @@ const Toggle = ({ setTheme }: Props) => {
   return (
     <div className="toggle">
       <div className="toggle__container--left">
-        <p className="toggle__label">THEME</p>
+        <p className="toggle__label">{strings.theme}</p>
       </div>
       <div className="toggle__container--right">
         <div className="toggle__container--numbers">
-          <p className="toggle__number">1</p>
-          <p className="toggle__number">2</p>
-          <p className="toggle__number">3</p>
+          {strings.themeNumbers.map((number) => {
+            return (
+              <p key={number} className="toggle__number">
+                {number}
+              </p>
+            );
+          })}
         </div>
         <div className="toggle__container--switch">
           <button
             data-count={count}
-            onClick={handleClick}
+            onClick={handleClickToggle}
             className="toggle__button"
             aria-label="toggle theme"
           ></button>

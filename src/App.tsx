@@ -1,22 +1,19 @@
-import "./App.scss";
 import { useState } from "react";
-import { evaluate } from "mathjs";
+import strings from "./strings/strings";
 import useLocalStorage from "use-local-storage";
 import Display from "./components/Display/Display";
 import Keypad from "./components/Keypad/Keypad";
 import Toggle from "./components/Toggle/Toggle";
-
-// Calculates and converts answer to sting
-
-const calculate = (expression: string): string => {
-  const result = evaluate(expression).toString();
-  return result;
-};
+import "./App.scss";
 
 function App() {
   // Store key "theme" with default value "theme-1" in local storage
 
   const [theme, setTheme] = useLocalStorage("theme", "theme-1");
+
+  // Store expression to be calculated in state (turn into context)
+
+  const [expression, setExpression] = useState("");
 
   // State for display component
 
@@ -26,15 +23,11 @@ function App() {
     <div data-theme={theme} className="home">
       <div className="calculator">
         <div className="calculator__container--top">
-          <h1 className="calculator__logo">calc</h1>
+          <h1 className="calculator__logo">{strings.title}</h1>
           <Toggle setTheme={setTheme} />
         </div>
         <Display display={display} />
-        <Keypad
-          display={display}
-          setDisplay={setDisplay}
-          calculate={calculate}
-        />
+        <Keypad />
       </div>
     </div>
   );
