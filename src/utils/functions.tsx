@@ -13,7 +13,9 @@ export const onKeyPress = () => {
   return "foo";
 };
 
-// export const onKeyPress = (keyValue: number | string, display: string, expression:string) => {
+// Old version of calculator key logic
+
+// export const onKeyPress = (keyValue: numsber | string, display: string, expression:string) => {
 //   const hasDecimal = /\.+/;
 //   let justClickedOperator = false;
 //   let justClickedEquals = false;

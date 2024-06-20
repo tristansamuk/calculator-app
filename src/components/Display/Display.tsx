@@ -1,13 +1,15 @@
 import "./Display.scss";
 
 interface Props {
-  display: string;
+  currentOperand: string;
 }
 
-const Display = ({ display }: Props) => {
+const Display = ({ currentOperand }: Props) => {
   return (
     <div className="display">
-      <h2 className="display__number">{display ? display : "0"}</h2>
+      <h2 className="display__number">
+        {currentOperand ? currentOperand : "0"}
+      </h2>
     </div>
   );
 };
