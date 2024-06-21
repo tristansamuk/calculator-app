@@ -6,7 +6,7 @@ import Keypad from "./components/Keypad/Keypad";
 import Toggle from "./components/Toggle/Toggle";
 import "./App.scss";
 
-// Interfaces useReducer
+// Interfaces
 
 interface State {
   currentOperand: string;
@@ -19,15 +19,18 @@ interface Action {
   payload: {};
 }
 
+// Actions for calcReducer and dispatch functions
+
 const ACTIONS = {
-  PRESS_DIGIT: "press-digit",
+  PRESS_DECIMAL: "press_decimal",
   PRESS_DELETE: "press_delete",
+  PRESS_DIGIT: "press_digit",
   PRESS_EQUALS: "evaluate",
-  PRESS_OPERATOR: "press-operator",
+  PRESS_OPERATOR: "press_operator",
   PRESS_RESET: "reset",
 };
 
-// Initial State
+// Initial State to be passed to useReducer()
 
 const initialState = {
   currentOperand: "",
@@ -37,6 +40,10 @@ const initialState = {
 
 const calcReducer = (state: State, action: Action) => {
   switch (action.type) {
+    case ACTIONS.PRESS_DECIMAL:
+      return {
+        ...state,
+      };
     case ACTIONS.PRESS_DIGIT:
       return {
         ...state,
@@ -67,7 +74,7 @@ function App() {
   const [state, dispatch] = useReducer(calcReducer, initialState);
   const [theme, setTheme] = useLocalStorage("theme", "theme-1");
 
-  // Dispatches for Reducer
+  // Click handler for keys plus appropriate dispatches for actions
 
   const handleKeyPress = (value: number | string) => {
     // if the key's value is a number, dispatch the press-digit action
@@ -76,7 +83,9 @@ function App() {
       /// if the key's value is string, it's either an operator, delete, or reset
     } else if (typeof value === "string") {
       // if key's value is delete, reset, or equals, dispatch the appropriate action
-      if (value === "DEL") {
+      if (value === ".") {
+        dispatch({ type: ACTIONS.PRESS_DECIMAL, payload: value });
+      } else if (value === "DEL") {
         dispatch({ type: ACTIONS.PRESS_DELETE, payload: value });
       } else if (value === "RESET") {
         dispatch({ type: ACTIONS.PRESS_RESET, payload: value });
@@ -87,6 +96,7 @@ function App() {
         dispatch({ type: ACTIONS.PRESS_OPERATOR, payload: value });
       }
     } else {
+      // Handle errors
       throw new Error(`Key press returned unknown: ${value}`);
     }
   };
