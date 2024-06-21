@@ -2,6 +2,15 @@ import { keyValues } from "../../utils/constants";
 import Key from "../Key/Key";
 import "./Keypad.scss";
 
+// interface Action {
+//   type: string;
+//   payload: {};
+// }
+
+// interface Props {
+//   dispatch: (value: Action) => void;
+// }
+
 const Keypad = () => {
   return (
     <div className="keypad">

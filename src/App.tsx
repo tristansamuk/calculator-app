@@ -16,7 +16,7 @@ interface State {
 
 interface Action {
   type: string;
-  payload: string;
+  payload: {};
 }
 
 const ACTIONS = {
@@ -35,12 +35,12 @@ const initialState = {
   operation: "",
 };
 
-const reducer = (state: State, action: Action) => {
+const calcReducer = (state: State, action: Action) => {
   switch (action.type) {
     case ACTIONS.PRESS_DIGIT:
       return {
         ...state,
-        currentOperand: "",
+        currentOperand: `${state.currentOperand || ""}${action.payload}`,
       };
     case ACTIONS.PRESS_DELETE:
       return {
@@ -64,10 +64,32 @@ const reducer = (state: State, action: Action) => {
 };
 
 function App() {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(calcReducer, initialState);
   const [theme, setTheme] = useLocalStorage("theme", "theme-1");
 
   // Dispatches for Reducer
+
+  const handleKeyPress = (value: number | string) => {
+    // if the key's value is a number, dispatch the press-digit action
+    if (typeof value === "number") {
+      dispatch({ type: ACTIONS.PRESS_DIGIT, payload: value });
+      /// if the key's value is string, it's either an operator, delete, or reset
+    } else if (typeof value === "string") {
+      // if key's value is delete, reset, or equals, dispatch the appropriate action
+      if (value === "DEL") {
+        dispatch({ type: ACTIONS.PRESS_DELETE, payload: value });
+      } else if (value === "RESET") {
+        dispatch({ type: ACTIONS.PRESS_RESET, payload: value });
+      } else if (value === "=") {
+        dispatch({ type: ACTIONS.PRESS_EQUALS, payload: value });
+        // Otherwise, it must be an operator
+      } else {
+        dispatch({ type: ACTIONS.PRESS_OPERATOR, payload: value });
+      }
+    } else {
+      throw new Error(`Key press returned unknown: ${value}`);
+    }
+  };
 
   return (
     <div data-theme={theme} className="home">
